@@ -1,57 +1,113 @@
-const recipe_object = {
+const recipes = [
+  {
     id: 1,
-    recipe_name: "Chocolate Raspberry Brownies",
-    recipe_image_url: "image/Chocolate Raspberry Brownies.jpg",
-  
+    steps:
+      "Season steak with salt and pepper and place in a resealable bag. Add onion, gahaking periodically to coat steak.",
+    ingredients: [
+      "1 (8 ounce) flat iron steak",
+      "2 pinches salt and coarsely ground pepper ",
+      "1 red onion, chopped",
+      "2 cloves garlic, minced",
+      "2 tablespoons Worcestershire sauce ",
+    ],
+    title: " Flat Iron Steak Marinade",
+    url: "http://allrecipes.com/recipe/244611/5-ingredient-flat-iron-steak-marinade/",
+    image: "img/dish4.jpg",
+    cook_time: "1 hour",
+  },
+  {
+    id: 2,
+    steps: "Preheat the oven and mix the ingredients. Bake until golden brown.",
+    ingredients: [
+      "2 cups all-purpose flour",
+      "1 cup sugar",
+      "1 teaspoon baking powder",
+      "1/2 teaspoon salt",
+      "1 cup milk",
+      "1/2 cup unsalted butter, melted",
+      "1 teaspoon vanilla extract",
+    ],
+    title: "Classic Pound Cake",
+    url: "http://example.com/classic-pound-cake-recipe/",
+    image: "img/dish5.jpg",
+    cook_time: "1.5 hours",
+  },
+  {
+    id: 3,
+    steps:
+      "Cook pasta according to package instructions. In a skillet, sauté garlic in olive oil. Add tomatoes, basil, and season with salt and pepper. Toss cooked pasta in the sauce.",
+    ingredients: [
+      "8 ounces spaghetti",
+      "2 tablespoons olive oil",
+      "3 cloves garlic, minced",
+      "1 pint cherry tomatoes, halved",
+      "1/2 cup fresh basil, chopped",
+      "Salt and pepper to taste",
+    ],
+    title: "Tomato Basil Pasta",
+    url: "http://example.com/tomato-basil-pasta-recipe/",
+    image: "img/dish6.jpg",
+    cook_time: "20 minutes",
+  },
+  {
+    id: 4,
+    steps: "Grill chicken until fully cooked. In a bowl, mix together honey, soy sauce, garlic, and ginger. Brush the sauce over the grilled chicken.",
+    ingredients: [
+        "4 boneless, skinless chicken breasts",
+        "1/4 cup honey",
+        "1/4 cup soy sauce",
+        "2 cloves garlic, minced",
+        "1 teaspoon fresh ginger, grated",
+    ],
+    title: "Honey Soy Grilled Chicken",
+    url: "http://example.com/honey-soy-grilled-chicken-recipe/",
+    image: "img/dish1.jpg",
+    cook_time: "15 minutes",
+}, {
+  id: 4,
+  steps: "Grill chicken until fully cooked. In a bowl, mix together honey, soy sauce, garlic, and ginger. Brush the sauce over the grilled chicken.",
+  ingredients: [
+      "4 boneless, skinless chicken breasts",
+      "1/4 cup honey",
+      "1/4 cup soy sauce",
+      "2 cloves garlic, minced",
+      "1 teaspoon fresh ginger, grated",
+  ],
+  title: "Honey Soy Grilled Chicken",
+  url: "http://example.com/honey-soy-grilled-chicken-recipe/",
+  image: "img/dish5.jpg",
+  cook_time: "15 minutes",
+}
+];
+
+const cards = document.getElementById("cards");
+
+const showCard = () => {
+    // loop in object
+recipes.map((recipe)=>{
+  const newCard = document.createElement("div");
+  newCard.classList.add("col");
+  newCard.setAttribute("id", "card");
+  newCard.innerHTML += `  <div class="card h-100">
+
+      <img src=${recipe.image} class="card-img-top" alt="lll">
+      <div class="card-body">
+         <h5 class="card-title ">${recipe.title}</h5>
+          <p class="card-text "> ${recipe.steps}</p>
+          <p class="card-text ">Cook time: ${recipes[0].cook_time}</p>
+
+        </div>
+        <div class="card-footer text-center">
+         <!-- <button type="button" class="btn btn-success ">View Recipe</button> -->
+         <a class="btn btn-success " href="ViewRecipe.html">View Recipe</a>
+        </div>
+        </div>`;
+            // insert card to cards
+            cards.appendChild(newCard)
+
+})
+
+ 
     
-    areas: "America",
-    ingridients: {
-      ingredient_name: ["Dark Chocolate", "Milk Chocolate", "Salted Butter", "Light Brown Soft Sugar", "Eggs", "Plain Flour", "Cocoa", "Raspberries",],
-      amount: ["200g", "100g", "250g", "400g", "4", "150g", "50g", "500g"],
-    },
-  
-  
-    
-
-
-  
-  method_para:
-  "Heat oven to 180C/160C fan/gas 4. Line a 20 x 30cm baking tray tin with baking parchment. Put the chocolate, butter and sugar in a pan and gently melt, stirring occasionally with a wooden spoon. Remove from the heat. Stir the eggs, one by one, into the melted chocolate mixture. Sieve over the flour and cocoa, and stir in. Stir in half the raspberries, scrape into the tray, then scatter over the remaining raspberries. Bake on the middle shelf for 30 mins or, if you prefer a firmer texture, for 5 mins more. Cool before slicing into squares. Store in an airtight container for up to 3 days",
-    youtube_link: "https://www.youtube.com/embed/Pi89PqsAaAg?si=pUKpGX0a5oGKijID",
-  };
-  
-
-  const recipe_name = document.querySelector(".title");
-  const method_para = document.querySelector(".method_para");
-  const recipe_areas = document.querySelector(".areas");
-  const recipe_image_url = document.querySelector(".recipe_image");
-  const youtube_link = document.querySelector(".youtube_link");
-  const ing_list=document.querySelector('.ing_list')
-  recipe_name.innerHTML = recipe_object.recipe_name;
-  method_para.innerHTML = recipe_object.method_para;
-  recipe_areas.innerHTML = recipe_object.areas;
-  recipe_image_url.src = recipe_object.recipe_image_url;
-  
-  youtube_link.src=recipe_object.youtube_link;
-  recipe_object.ingridients.ingredient_name.forEach((item)=>{
-                                                      let li=document.createElement("li");
-                                                      li.innerHTML=item;
-                                                      ing_list.appendChild(li);
-                                                      
-                                    
-  });
-  const amount_list=document.querySelector('.amount_list')
-  recipe_object.ingridients.amount.forEach((item)=>{
-                                                      let li=document.createElement("li");
-                                                      li.innerHTML=item;
-                                                      amount_list.appendChild(li);
-                                                      
-                                    
-  })
-  
-  
-  
-  // ing_list.style.backgroundColor="red"
-  
-  
-  
+};
+showCard();

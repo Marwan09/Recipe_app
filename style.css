@@ -1,122 +1,42 @@
-/*  check color */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+}
+
 body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: #f7f6f2;
-    font-family: "Times New Roman", Times, serif;
-    font-family: "Merriweather", serif;
-    font-family: "Roboto", sans-serif;
-    font-family: "Tajawal", sans-serif;
-  }
-  li{
-      list-style: none;
-  }
-  a{
-      text-decoration: none;
-      
-  }
-  
-  /* Header */
-  header {
-    background-color: #ffffff;
-    height: 60px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    line-height: 60px;
-    text-align: center;
-  }
-  
-  header h3 {
-    margin: 0;
-  }
-  
-  /* main */
-  .recipe_top {
-    display: flex;
-    margin: 40px;
-    position: relative;
-    margin-top: 90px;
-  }
-  
-  .recipe_top .right {
-    width: 50%;
-    text-align: center;
-    margin-left: 30px;
-  }
-  
-  /*  remmember title hover */
-  
-  .recipe_top .left {
-    width: 50%;
-    /*  border-radius: 50px; */
-    border: 20pd solid rgb(120, 45, 45);
-    text-align: center;
-  }
-  
-  .recipe_top img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    max-width: 500px;
-    max-height: 360px;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  .ingredients{
-      display: flex;
-      justify-content: space-around;
-      background-color: #ffffff;
-      box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%);
-      border-radius: 15px;
-      line-height: 30px;
-     
-   
-  
-  }
-   h3:hover, li:hover,h2:hover,h1:hover{
-      color: red;
-      transition: 0.4s ease;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
-  }
-  
-  /* .ingredients .ing_list{
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-around; 
-    margin: 10px 15px;
-    
-   
-  } */
-  .ingredients li{
-      border-bottom: 1px solid black;
-  
-  }
-  
-  
-  /*  remmember Hover  to image*/
-  /*method*/
-  .method h2 {
-    text-align: center;
-  }
-  .method .para {
-    margin: 40px;
-    box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%);
-    /* border: 1px solid rgba(226, 224, 224, 0.338); */
-    /* box-shadow: 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 8px 16px rgba(0,0,0,0.11); */
-    padding: 15px;
-    border-radius: 15px;
-    background-color: #ffffff;
-  }
-  
-  .method .para .method_para {
-    font-size: 17px;
-    text-align: justify;
-    margin: 10px 20px;
-  }
-  
-  .youtube {
-    text-align: center;
-  }
-  
+  background-color: #f9f6f2;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.card-img-top {
+  border-radius: 30px;
+  padding: 20px;
+
+  /* box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 5px; */
+}
+
+.card {
+
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.card-body {
+  padding: 25px;
+  margin-top: -15px;
+}
+
+.btn-primary {
+  border-radius: 7px;
+
+}
+
+h3,
+h5 {
+  color: rgb(0, 91, 228);
+}

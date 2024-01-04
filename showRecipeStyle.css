@@ -1,0 +1,22 @@
+/* Show Recipe */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: #f9f6f2;
+}
+.imageDiv .recipe_image{
+   width: 100%;
+   
+    border-radius: 30px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.ingredientsDiv{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
